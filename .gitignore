@@ -1,0 +1,57 @@
+# Local JDK bootstrap (see DEVELOPMENT.md — install JDK 25 globally instead if preferred)
+.tools/
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+.gradle/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Test / coverage
+coverage/
+test-results/
+.jest/
+
+# Java
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.war
+hs_err_pid*
+
+# Terraform
+infrastructure/terraform/.terraform/
+*.tfstate
+*.tfstate.*
+
+# Assets (large binaries — track via LFS or CDN in production)
+assets/exported/**/*.glb
+assets/exported/**/*.ktx2
+
+# Docker volumes (local)
+.docker/

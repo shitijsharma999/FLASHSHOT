@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashshot</title>
+    <link rel="stylesheet" href="/src/ui/boot.css" />
+  </head>
+  <body>
+    <div id="boot-screen">
+      <header class="boot-header">
+        <h1>Flashshot</h1>
+        <p class="tagline">Browser competitive FPS — Phase 0 foundation</p>
+      </header>
+      <dl class="status-grid" id="status-panel">
+        <div>
+          <dt>Renderer</dt>
+          <dd id="status-renderer">Initializing…</dd>
+        </div>
+        <div>
+          <dt>Game server</dt>
+          <dd id="status-game-server">Waiting…</dd>
+        </div>
+        <div>
+          <dt>API</dt>
+          <dd id="status-api">Waiting…</dd>
+        </div>
+      </dl>
+      <p class="hint">Gameplay systems are intentionally disabled in Phase 0.</p>
+    </div>
+    <canvas id="game-canvas" aria-hidden="true"></canvas>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

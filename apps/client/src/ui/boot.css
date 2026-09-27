@@ -1,0 +1,84 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #0b0f14;
+  color: #e8eef7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#game-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+
+#boot-screen {
+  position: relative;
+  z-index: 1;
+  max-width: 36rem;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgb(11 15 20 / 0.85);
+  border: 1px solid #243044;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.boot-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+}
+
+.tagline {
+  margin: 0 0 1.5rem;
+  color: #9fb0c9;
+}
+
+.status-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.status-grid dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7d8fa8;
+}
+
+.status-grid dd {
+  margin: 0.15rem 0 0;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+}
+
+.status-ok {
+  color: #6ee7a8;
+}
+
+.status-warn {
+  color: #fbbf24;
+}
+
+.status-error {
+  color: #f87171;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #7d8fa8;
+}

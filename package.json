@@ -1,0 +1,39 @@
+{
+  "name": "flashshot",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0-phase0",
+  "description": "Browser competitive FPS — monorepo root",
+  "workspaces": [
+    "apps/client",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @flashshot/client",
+    "dev:client": "npm run dev --workspace @flashshot/client",
+    "build": "npm run build --workspaces --if-present",
+    "build:client": "npm run build --workspace @flashshot/client",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,json,md,yml,yaml}\"",
+    "test": "npm run test --workspaces --if-present",
+    "test:java": "gradlew.bat test",
+    "check": "npm run typecheck && npm run lint && npm run test && npm run build:client && gradlew.bat test build -x bootRun",
+    "infra:up": "docker compose -f infrastructure/docker/docker-compose.yml up -d",
+    "infra:down": "docker compose -f infrastructure/docker/docker-compose.yml down"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.5.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

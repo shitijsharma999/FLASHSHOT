@@ -1,0 +1,19 @@
+{
+  "name": "@flashshot/protocol",
+  "version": "0.0.0-phase0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@flashshot/shared-types": "*"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}
