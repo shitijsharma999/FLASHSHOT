@@ -1,4 +1,4 @@
-import { Color4, Scene } from "@babylonjs/core";
+import { Color4, FreeCamera, Scene, Vector3 } from "@babylonjs/core";
 import { clientConfig } from "../config/env";
 import { logger } from "../logging/logger";
 import { AppLifecycle } from "../lifecycle/app-lifecycle";
@@ -26,6 +26,9 @@ export async function bootstrapClient(lifecycle: AppLifecycle): Promise<() => vo
   const { engine, backend } = await createGameEngine(canvas);
   const scene = new Scene(engine);
   scene.clearColor = new Color4(0.04, 0.06, 0.09, 1);
+  const camera = new FreeCamera("phase0-camera", new Vector3(0, 0, -5), scene);
+  camera.setTarget(Vector3.Zero());
+  scene.activeCamera = camera;
 
   setStatus("status-renderer", backend.toUpperCase(), "status-ok");
 
